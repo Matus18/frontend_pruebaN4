@@ -1,24 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module'; // Asegúrate de importar AppRoutingModule
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ListComponent } from './list/list.component';
 import { ServicesComponent } from './services/services.component';
 import { ProductsComponent } from './products/products.component';
-import { CatalogComponent } from './catalog/catalog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListComponent,
     ServicesComponent,
-    ProductsComponent,
-    CatalogComponent
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule // Asegúrate de agregar AppRoutingModule en los imports
   ],
   providers: [],
   bootstrap: [AppComponent]
