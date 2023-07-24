@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module'; // Asegúrate de importar AppRoutingModule
-
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServicesComponent } from './services/services.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './products/products.component'; // Asegúrate de importar el componente
 
 @NgModule({
   declarations: [
     AppComponent,
     ServicesComponent,
-    ProductsComponent
+    ProductsComponent // Asegúrate de agregar el componente en el arreglo de declaraciones
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule // Asegúrate de agregar AppRoutingModule en los imports
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
