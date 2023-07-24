@@ -1,10 +1,9 @@
 <h2>Catálogo de Productos</h2>
 
-<ul>
-  <li *ngFor="let product of products">
-    <h3>{{ product.title }}</h3>
-    <p>Precio: {{ product.price }}</p>
-    <p>{{ product.description }}</p>
-    <!-- Agrega cualquier otra información que desees mostrar -->
-  </li>
-</ul>
+<div *ngFor="let product of products">
+  <h3>{{ product.title }}</h3>
+  <p>Precio: {{ product.price }}</p>
+  <p>{{ product.description }}</p>
+  <p>Categoría: {{ product.category }}</p>
+  <img [src]="product.image" alt="{{ product.title }}">
+</div>

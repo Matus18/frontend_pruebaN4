@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FakePlatziApiService } from '../fake-platzi-api.service';
+import { ProductsService } from './products.service';
 
 @Component({
   selector: 'app-products',
@@ -9,14 +9,14 @@ import { FakePlatziApiService } from '../fake-platzi-api.service';
 export class ProductsComponent implements OnInit {
   products: any[] = []; // Variable para almacenar los datos de productos
 
-  constructor(private fakePlatziApiService: FakePlatziApiService) { }
+  constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
     this.getProducts();
   }
 
   getProducts() {
-    this.fakePlatziApiService.getProducts().subscribe(
+    this.productsService.getProducts().subscribe(
       (productsData: any) => {
         this.products = productsData;
       },

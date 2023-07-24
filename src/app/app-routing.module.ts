@@ -4,9 +4,9 @@ import { ServicesComponent } from './services/services.component';
 import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/services', pathMatch: 'full' }, // Redirigir a la página de servicios por defecto
+  { path: '', redirectTo: '/services', pathMatch: 'full' },
   { path: 'services', component: ServicesComponent },
-  { path: 'products', component: ProductsComponent } // Verifica que esta ruta esté definida correctamente
+  { path: 'products', component: ProductsComponent }
 ];
 
 @NgModule({
