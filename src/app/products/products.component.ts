@@ -7,7 +7,7 @@ import { FakePlatziApiService } from '../fake-platzi-api.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-  products: any[]; // Variable para almacenar los datos de productos
+  products: any[] = []; // Agrega un valor inicial vacío para la variable 'products'
 
   constructor(private fakePlatziApiService: FakePlatziApiService) { }
 
@@ -19,10 +19,10 @@ export class ProductsComponent implements OnInit {
   getProducts() {
     // Utilizamos el método del servicio para obtener los datos de productos
     this.fakePlatziApiService.getProducts().subscribe(
-      (productsData) => {
-        this.products = productsData; // Utilizamos "productsData" en lugar de "productos"
+      (productsData: any) => { // Define el tipo de 'productsData' como 'any'
+        this.products = productsData;
       },
-      (error) => {
+      (error: any) => { // Define el tipo de 'error' como 'any'
         console.error('Error al obtener los datos de productos:', error);
       }
     );

@@ -7,7 +7,7 @@ import { FakePlatziApiService } from '../fake-platzi-api.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  services: any[]; // Variable para almacenar los datos de servicios
+  services: any[] = []; // Agrega un valor inicial vacío para la variable 'services'
 
   constructor(private fakePlatziApiService: FakePlatziApiService) { }
 
@@ -19,10 +19,10 @@ export class ListComponent implements OnInit {
   getServices() {
     // Utilizamos el método del servicio para obtener los datos de servicios
     this.fakePlatziApiService.getServices().subscribe(
-      (servicesData) => {
+      (servicesData: any) => { // Define el tipo de 'servicesData' como 'any'
         this.services = servicesData;
       },
-      (error) => {
+      (error: any) => { // Define el tipo de 'error' como 'any'
         console.error('Error al obtener los datos de servicios:', error);
       }
     );

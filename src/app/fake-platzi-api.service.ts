@@ -6,19 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FakePlatziApiService {
-  private baseUrl = 'https://fakeapi.platzi.com/en/rest';
+  private apiUrl = 'https://api.escuelajs.co/api/v1/products'; // Coloca la URL correcta de la APIREST
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<any[]> {
-    const url = `${this.baseUrl}/users`;
-    return this.http.get<any[]>(url);
+  getCatalog(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/catalog`); // Ajusta la ruta para obtener el catálogo desde la API
   }
 
-  getProducts(): Observable<any[]> {
-    const url = `${this.baseUrl}/products`;
-    return this.http.get<any[]>(url);
-  }
-
-  // Agrega aquí otros métodos para consumir la API si lo necesitas
+  // Otros métodos para obtener servicios y productos si están disponibles en la APIREST
 }

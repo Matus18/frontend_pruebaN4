@@ -7,7 +7,7 @@ import { FakePlatziApiService } from '../fake-platzi-api.service';
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
-  catalog: any[]; // Variable para almacenar los datos del catálogo
+  catalog: any[] = []; // Agrega un valor inicial vacío para la variable 'catalog'
 
   constructor(private fakePlatziApiService: FakePlatziApiService) { }
 
@@ -19,10 +19,10 @@ export class CatalogComponent implements OnInit {
   getCatalog() {
     // Utilizamos el método del servicio para obtener los datos del catálogo
     this.fakePlatziApiService.getCatalog().subscribe(
-      (catalogData) => {
+      (catalogData: any) => { // Define el tipo de 'catalogData' como 'any'
         this.catalog = catalogData;
       },
-      (error) => {
+      (error: any) => { // Define el tipo de 'error' como 'any'
         console.error('Error al obtener los datos del catálogo:', error);
       }
     );
